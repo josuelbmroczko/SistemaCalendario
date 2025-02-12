@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 
 
-
-
+const eventoCalendario = require('./rotas/crudCalendario');
+app.use('/eventoCalendario',eventoCalendario);
 
 
 app.listen(PORT,()=>{
