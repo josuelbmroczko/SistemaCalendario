@@ -71,6 +71,14 @@ Front-end (React.js)
 
 axios: Cliente HTTP para consumir a API
 
+
+
+Instalação de dependências
+date-fns - calendario para nao precisar criar os dias meses e anos 
+npm install moment adicionar localidade
+ 
+
+
 ⚙️ Decisões Técnicas Relevantes
 
 Organização Modular: O projeto foi estruturado em pastas específicas para separar o front-end e back-end.

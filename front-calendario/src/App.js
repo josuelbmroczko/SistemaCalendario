@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+ 
 import './App.css';
+import CalendarioEventos from './Componentes/calendario/CalendarioEventos';
+ 
 
 function App() {
   return (
     <div className="App">
-       oi
+       <CalendarioEventos/>
     </div>
   );
 }

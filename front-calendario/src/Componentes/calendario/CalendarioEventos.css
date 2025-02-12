@@ -1,0 +1,236 @@
+/* Calendário */
+.calendar-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombras sutis para destacar */
+  border-radius: 15px; /* Bordas arredondadas para suavizar */
+}
+
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 16px; /* Bordas arredondadas para o calendário */
+}
+
+.react-calendar {
+  border: none;
+  font-size: 20px; /* Aumentar o tamanho da fonte */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombras mais suaves para um efeito elegante */
+  padding: 25px; /* Padding mais generoso */
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1); /* Aumento sutil ao passar o mouse */
+}
+
+.react-calendar:hover {
+  transform: scale(1.05); /* Pequena animação ao passar o mouse */
+}
+
+.react-calendar__tile {
+  font-size: 22px;
+  padding: 18px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.react-calendar__tile:hover {
+  background-color: #fbc02d;
+  color: white;
+}
+
+.react-calendar__tile:active {
+  background-color: #fbc02d;
+  color: white;
+}
+
+.react-calendar__tile--now {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 650px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: slideIn 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+.modal-content:hover {
+  transform: scale(1.02); /* Animação suave no hover */
+}
+
+/* Ajustes para o formulário de evento */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-form input,
+.event-form textarea,
+.event-form button {
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.event-form button {
+  background-color: #fbc02d;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.event-form button:hover {
+  background-color: #f44336;
+  transform: scale(1.05); /* Animação no hover */
+}
+
+.event-form label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .calendar-wrapper {
+    flex-direction: column;
+  }
+
+  .calendar {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .modal-content {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .event-form input,
+  .event-form textarea,
+  .event-form button {
+    padding: 14px;
+  }
+}
+
+/* Estilo geral */
+body {
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.event-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2); /* Efeito de sombra mais forte */
+  transform: translateY(-5px); /* Levantar levemente o card */
+}
+
+.event-card h3 {
+  font-size: 22px;
+  color: #333;
+}
+
+.event-card p {
+  color: #555;
+}
+
+.event-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+.p-comdestaque{
+  font-size: 1.5rem;
+}
