@@ -76,7 +76,8 @@ axios: Cliente HTTP para consumir a API
 Instalação de dependências
 date-fns - calendario para nao precisar criar os dias meses e anos 
 npm install moment adicionar localidade
- 
+npm install react-router-dom
+
 
 
 ⚙️ Decisões Técnicas Relevantes
