@@ -1,64 +1,92 @@
-/* Calendário */
+/* Importação da fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Estilo geral */
+body {
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container do Calendário */
 .calendar-container {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
   text-align: center;
-  padding: 25px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombras sutis para destacar */
-  border-radius: 15px; /* Bordas arredondadas para suavizar */
+  padding: 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 50px auto;
 }
 
 .calendar-wrapper {
   display: flex;
   justify-content: center;
   gap: 60px;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .calendar {
   width: 100%;
   max-width: 750px;
-  border-radius: 16px; /* Bordas arredondadas para o calendário */
+  border-radius: 16px;
 }
 
 .react-calendar {
   border: none;
-  font-size: 20px; /* Aumentar o tamanho da fonte */
-  background-color: #ffffff;
+  font-size: 18px;
   border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombras mais suaves para um efeito elegante */
-  padding: 25px; /* Padding mais generoso */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  padding: 25px;
   width: 100%;
   transition: all 0.3s ease-in-out;
-  transform: scale(1); /* Aumento sutil ao passar o mouse */
+  background-color: #ffffff;
 }
 
 .react-calendar:hover {
-  transform: scale(1.05); /* Pequena animação ao passar o mouse */
+  transform: scale(1.02);
 }
 
 .react-calendar__tile {
-  font-size: 22px;
-  padding: 18px;
+  font-size: 18px;
+  padding: 15px;
   border-radius: 50%;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .react-calendar__tile:hover {
-  background-color: #fbc02d;
+  background-color: #007bff;
   color: white;
+  transform: scale(1.1);
 }
 
 .react-calendar__tile:active {
-  background-color: #fbc02d;
+  background-color: #0056b3;
   color: white;
 }
 
 .react-calendar__tile--now {
-  background-color: #f44336;
+  background-color: #28a745;
   color: white;
   font-weight: bold;
+  border-radius: 50px;
+  transform: scale(1.1);
+}
+
+.react-calendar__tile--active {
+  background: #007bff;
+  border-radius: 50px;
+  color: white;
+}
+
+.react-calendar__tile:enabled:hover, .react-calendar__tile:enabled:focus {
+  background-color: #007bff;
+  border-radius: 50px;
+  color: white;
 }
 
 /* Modal */
@@ -77,7 +105,7 @@
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 35px;
   border-radius: 15px;
   width: 90%;
@@ -89,10 +117,10 @@
 }
 
 .modal-content:hover {
-  transform: scale(1.02); /* Animação suave no hover */
+  transform: scale(1.02);
 }
 
-/* Ajustes para o formulário de evento */
+/* Formulário de Evento */
 .event-form {
   display: flex;
   flex-direction: column;
@@ -105,12 +133,12 @@
   padding: 16px;
   border-radius: 10px;
   border: 1px solid #ddd;
-  font-size: 18px;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 
 .event-form button {
-  background-color: #fbc02d;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   border: none;
@@ -119,20 +147,22 @@
 }
 
 .event-form button:hover {
-  background-color: #f44336;
-  transform: scale(1.05); /* Animação no hover */
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .event-form label {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   color: #333;
 }
+ 
 
 /* Responsividade */
 @media (max-width: 768px) {
   .calendar-wrapper {
     flex-direction: column;
+    gap: 30px;
   }
 
   .calendar {
@@ -152,51 +182,71 @@
   }
 }
 
-/* Estilo geral */
-body {
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-h1, h2, h3 {
-  color: #333;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-h2 {
-  font-size: 28px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
+/* Estilo dos Eventos */
 .event-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
-.event-card:hover {
-  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2); /* Efeito de sombra mais forte */
-  transform: translateY(-5px); /* Levantar levemente o card */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.event-card h3 {
-  font-size: 22px;
+.event-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.event-description {
+  font-size: 1rem;
   color: #333;
+  margin: 5px 0;
+}
+
+.event-time {
+  font-size: 0.9rem;
+  color: #a50808;
+  margin: 5px 0;
+}
+
+.event-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.event-actions button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
 .event-card p {
-  color: #555;
+  margin: 5px 0;
 }
 
 .event-buttons {
@@ -207,30 +257,44 @@ h3 {
 .btn-edit, .btn-delete {
   padding: 10px 15px;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-edit {
-  background-color: #4CAF50;
+  background-color: #28a745;
   color: white;
 }
 
 .btn-edit:hover {
-  background-color: #45a049;
+  background-color: #218838;
   transform: scale(1.05);
 }
 
 .btn-delete {
-  background-color: #f44336;
+  background-color: #dc3545;
   color: white;
 }
 
 .btn-delete:hover {
-  background-color: #e53935;
+  background-color: #c82333;
   transform: scale(1.05);
 }
-.p-comdestaque{
+
+.p-comdestaque {
   font-size: 1.5rem;
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

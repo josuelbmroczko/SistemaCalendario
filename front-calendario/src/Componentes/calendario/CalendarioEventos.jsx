@@ -31,7 +31,8 @@ const CalendarioEventos = () => {
     const data = {
       titulo,
       descricao,
-      data: date.toISOString().split('T')[0],
+      // Ajuste da data para o fuso horário local
+      data: date.toLocaleDateString('en-CA'), // Formato ISO para data local
       horario
     };
 
@@ -76,6 +77,7 @@ const CalendarioEventos = () => {
     setTitulo(event.titulo);
     setDescricao(event.descricao);
     setHorario(event.horario);
+    // Ajuste da data para o fuso horário local
     setDate(new Date(event.data)); 
     setEditingEvent(event);
     setIsModalOpen(true); // Abrir o modal ao editar um evento
@@ -86,20 +88,25 @@ const CalendarioEventos = () => {
   };
 
   const renderEvents = () => {
-    return events.map(event => (
+    // Ordenando os eventos pela data (do mais próximo para o mais distante)
+    const sortedEvents = events.sort((a, b) => new Date(a.data) - new Date(b.data));
+  
+    return sortedEvents.map(event => (
       <div key={event.id} className="event-card">
-        <h3>{event.titulo}</h3>
-        <p>{event.descricao}</p>
-        <p><strong>Data:</strong> {formatDate(event.data)}</p>
-        <p><strong>Horário:</strong> {event.horario}</p>
-        <div className="event-buttons">
+        <div className="event-header">
+          <h3>{event.titulo}</h3>
+          <p className="event-date">{formatDate(event.data)}</p>
+        </div>
+        <p className="event-description">{event.descricao}</p>
+        <p className="event-time"><strong>Horário:</strong> {event.horario}</p>
+        <div className="event-actions">
           <button onClick={() => handleEdit(event)} className="btn-edit">Editar</button>
           <button onClick={() => handleDelete(event.id)} className="btn-delete">Deletar</button>
         </div>
       </div>
     ));
   };
-
+  
   return (
     <div className="calendar-container">
       <h1>Calendário de Eventos</h1>
@@ -110,6 +117,8 @@ const CalendarioEventos = () => {
           <Calendar
             onChange={handleDateChange}
             value={date}
+            locale="pt-BR" // Definindo o idioma para português com domingo como primeiro dia
+            weekStartsOn={0} // Forçando o domingo como o primeiro dia da semana
           />
         </div>
 
@@ -140,7 +149,7 @@ const CalendarioEventos = () => {
                   <label>Data:</label>
                   <input
                     type="date"
-                    value={date.toISOString().split('T')[0]}
+                    value={date.toLocaleDateString('en-CA')} // Formato ISO para data local
                     onChange={(e) => setDate(new Date(e.target.value))}
                     required
                   />
