@@ -5,7 +5,7 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-container">
-      <div className="welcome-message">
+      <div className="BemVindo">
         <h1>Bem-vindo!</h1>
         <p>Essa é a nossa página de eventos. Fique à vontade para explorar!</p>
       </div>

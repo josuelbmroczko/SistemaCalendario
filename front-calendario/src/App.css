@@ -12,7 +12,7 @@
 }
 
 body.claro {
-  background: linear-gradient(135deg, #fa653f, #feb47b);
+background: linear-gradient(135deg, #6a8dff, #4f6dff);
   color: #000000;
 }
 
@@ -61,15 +61,17 @@ button {
   font-size: 16px;
   cursor: pointer;
   margin: 20px;
-  background-color: #61dafb;
-   
+  background-color: #00000063;
+ 
   border: none;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: #21a1f1;
+  background-color: #7c7c7c7c;
 }
 .botaoQueTrocarOTema{
   position: fixed;
+  color: white;
 }
+ 

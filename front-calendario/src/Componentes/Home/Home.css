@@ -8,8 +8,7 @@
 }
 
 body.claro {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente bonito */
-  color: #000;
+  background: linear-gradient(135deg, #8ea6f7, #536dee, #5f75e7, #324fe4);  color: #000;
 }
 
 body.escuro {
@@ -27,7 +26,7 @@ body.escuro {
 }
 
 .home-container.claro {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente bonito */
+  background: linear-gradient(135deg, #8ea6f7, #536dee); /* Gradiente bonito */
 }
 
 .home-container.escuro {
@@ -35,18 +34,22 @@ body.escuro {
 }
 
 /* Mensagem de boas-vindas */
-.welcome-message {
+.BemVindo {
   opacity: 0;
   animation: fadeIn 2s forwards; /* Animação de fade-in */
 }
 
-.welcome-message h1 {
+.BemVindo h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   animation: slideInFromLeft 1.5s ease-out;
+  color: #010e4e;
+}
+body.escuro .BemVindo h1{
+  color: #ffffff;
 }
 
-.welcome-message p {
+.BemVindo p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   animation: slideInFromRight 1.5s ease-out;
@@ -72,7 +75,7 @@ body.escuro {
 }
 
 .btn-explore:hover {
-  background-color: #feb47b;
+  background-color:  7, #536dee;
   color: #fff;
   transform: scale(1.1);
 }
@@ -107,11 +110,11 @@ body.escuro {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .welcome-message h1 {
+  .BemVindo h1 {
     font-size: 2rem;
   }
 
-  .welcome-message p {
+  .BemVindo p {
     font-size: 1rem;
   }
 

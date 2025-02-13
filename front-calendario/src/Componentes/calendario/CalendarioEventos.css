@@ -17,7 +17,8 @@ body {
   color: #606468;
   text-align: center;
   padding: 30px;
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  background: linear-gradient(135deg, #8ea6f7, #536dee, #5f75e7, #324fe4);
+
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   max-width: 1200px;
@@ -129,6 +130,10 @@ body.escuro .react-calendar{
   animation: slideIn 0.5s ease-in-out;
   transform: scale(1);
 }
+body.escuro .modal-content {
+  background-color: #575757;
+  color: white;
+}
 
 .modal-content:hover {
   transform: scale(1.02);
@@ -168,7 +173,7 @@ body.escuro .react-calendar{
 .event-form label {
   font-weight: bold;
   font-size: 16px;
-  color: #333;
+   
 }
  
 
