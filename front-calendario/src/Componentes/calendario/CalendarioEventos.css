@@ -136,9 +136,12 @@ body.escuro .react-calendar{
   animation: slideIn 0.5s ease-in-out;
   transform: scale(1);
 }
-body.escuro .modal-content {
+body.escuro .modal-content  {
   background-color: #575757;
   
+}
+body.escuro .event-form{
+  background-color: #575757;
 }
 
 .modal-content:hover {
@@ -173,9 +176,18 @@ body.escuro .modal-content {
   border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 16px;
+ background-color: #FFFFFF;
   transition: all 0.3s ease;
+
 }
 
+body.claro .event-form textarea{
+  background-color: #FFFFFF;
+}
+body.escuro .event-form input, .event-form textarea{
+  background-color: #5c6169;
+  color: white;
+}
 .event-form input,
 .event-form textarea {
   width: 100%; /* Garante que os campos ocupem toda a largura */
