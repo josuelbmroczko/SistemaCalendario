@@ -2,7 +2,9 @@
 Sistema Calendario
 
 
-#Como Rodar o Projeto Localmente
+Usei Node.js no back-end porque é rápido, leve e fácil de lidar com muitas requisições ao mesmo tempo, perfeito para gerenciar os eventos do calendário. Já o React.js no front-end foi para criar uma interface dinâmica e interativa, onde as mudanças aparecem sem precisar recarregar a página.
+
+### Como Rodar o Projeto Localmente ###
 
 Pré-requisitos
 Certifique-se de ter as seguintes ferramentas instaladas:
@@ -11,7 +13,7 @@ Node.js
 XAMPP para rodar o MySQL
 Navegador Web
 
-Configuração do Banco de Dados
+## Configuração do Banco de Dados
 Abra o XAMPP e inicie o servidor MySQL.
 Crie um banco de dados chamado calendario.
 Crie a tabela eventos com os seguintes campos:
@@ -23,9 +25,13 @@ CREATE TABLE eventos (
   data DATE,
   horario TIME
 );
+####
+## Ou baixe o calendario aqui   
+https://drive.google.com/file/d/1mZpxN2pVUWfsCbsernhmRQJYrREUBdBQ/view?usp=sharing
+####
 
 Instalação e Configuração
-lone este repositório.
+clone este repositório.
 git clone https://github.com/josuelbmroczko/SistemaCalendario.git
 
 Navegue até a pasta SistemaCalendario e instale as dependências.

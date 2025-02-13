@@ -28,6 +28,7 @@ body.escuro .calendar-container {
   background: linear-gradient(135deg, #131518, #726f6f);
   color: #1f95bd;
 }
+ 
 
 .calendar-wrapper {
   display: flex;
@@ -198,6 +199,9 @@ body.escuro .modal-content {
   .event-form textarea,
   .event-form button {
     padding: 14px;
+  }
+  .react-calendar{
+    padding:0;
   }
  
 }

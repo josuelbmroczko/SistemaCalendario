@@ -72,6 +72,8 @@ button:hover {
 }
 .botaoQueTrocarOTema{
   position: fixed;
+  
+  top: -10px;
   color: white;
 }
  
