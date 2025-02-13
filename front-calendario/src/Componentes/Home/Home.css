@@ -1,99 +1,122 @@
- 
-  .home-container {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente bonito */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    flex-direction: column;
-  }
-  
-  /* Mensagem de boas-vindas */
-  .welcome-message {
+/* Estilos principais */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.claro {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente bonito */
+  color: #000;
+}
+
+body.escuro {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.home-container.claro {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente bonito */
+}
+
+.home-container.escuro {
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradiente para o tema escuro */
+}
+
+/* Mensagem de boas-vindas */
+.welcome-message {
+  opacity: 0;
+  animation: fadeIn 2s forwards; /* Animação de fade-in */
+}
+
+.welcome-message h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: slideInFromLeft 1.5s ease-out;
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: slideInFromRight 1.5s ease-out;
+}
+
+/* Botões */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.btn-explore {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-explore:hover {
+  background-color: #feb47b;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    animation: fadeIn 2s forwards; /* Animação de fade-in */
   }
-  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .welcome-message h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: slideInFromLeft 1.5s ease-out;
+    font-size: 2rem;
   }
-  
+
   .welcome-message p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    animation: slideInFromRight 1.5s ease-out;
+    font-size: 1rem;
   }
-  
-  /* Botões */
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-  }
-  
+
   .btn-explore {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
+    font-size: 1rem;
+    padding: 12px 25px;
   }
-  
-  .btn-explore:hover {
-    background-color: #feb47b;
-    color: #fff;
-    transform: scale(1.1);
-  }
-  
-  /* Animações */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .welcome-message h1 {
-      font-size: 2rem;
-    }
-  
-    .welcome-message p {
-      font-size: 1rem;
-    }
-  
-    .btn-explore {
-      font-size: 1rem;
-      padding: 12px 25px;
-    }
-  }
-  
+}
