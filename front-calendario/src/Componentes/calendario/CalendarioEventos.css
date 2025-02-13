@@ -182,6 +182,7 @@ body.escuro .event-form{
 }
 
 body.claro .event-form textarea{
+  color: #151516;
   background-color: #FFFFFF;
 }
 body.escuro .event-form input, .event-form textarea{
@@ -389,3 +390,17 @@ body.escuro .event-card{
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+.react-calendar__navigation button{
+  font-weight: bold;
+  color: #e1e6e6;
+  background-color: #817f7f;
+  height: 60px;
+}
+.react-calendar__navigation button:hover{
+  font-weight: bold;
+  color: #1a1717;
+ 
+}
+ 
+ 

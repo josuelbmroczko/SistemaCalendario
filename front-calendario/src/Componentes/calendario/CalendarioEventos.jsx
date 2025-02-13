@@ -88,23 +88,28 @@ const CalendarioEventos = () => {
   };
 
   const renderEvents = () => {
-    // Ordenando os eventos pela data (do mais próximo para o mais distante)
+    // Ordenando os eventos em ordem crescente
     const sortedEvents = events.sort((a, b) => new Date(a.data) - new Date(b.data));
   
-    return sortedEvents.map(event => (
-      <div key={event.id} className="event-card">
-        <div className="event-header">
-          <h3>{event.titulo}</h3>
-          <p className="event-date">{formatDate(event.data)}</p>
+    return sortedEvents.map(event => {
+      // Formatando o horário sem os segundos
+      const formattedTime = new Date(`1970-01-01T${event.horario}`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  
+      return (
+        <div key={event.id} className="event-card">
+          <div className="event-header">
+            <h3>{event.titulo}</h3>
+            <p className="event-date">{formatDate(event.data)}</p>
+          </div>
+          <p className="event-description">{event.descricao}</p>
+          <p className="event-time"><strong>Horário:</strong> {formattedTime}</p>
+          <div className="event-actions">
+            <button onClick={() => handleEdit(event)} className="btn-edit">Editar</button>
+            <button onClick={() => handleDelete(event.id)} className="btn-delete">Deletar</button>
+          </div>
         </div>
-        <p className="event-description">{event.descricao}</p>
-        <p className="event-time"><strong>Horário:</strong> {event.horario}</p>
-        <div className="event-actions">
-          <button onClick={() => handleEdit(event)} className="btn-edit">Editar</button>
-          <button onClick={() => handleDelete(event.id)} className="btn-delete">Deletar</button>
-        </div>
-      </div>
-    ));
+      );
+    });
   };
   
   return (
