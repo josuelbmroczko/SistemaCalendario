@@ -20,6 +20,11 @@ const CalendarioEventos = () => {
       })
       .catch(error => console.error("Erro ao carregar eventos:", error));
   }, []);
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    resetForm(); // Resetar os campos quando o modal for fechado
+  };
+  
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
@@ -136,6 +141,15 @@ const CalendarioEventos = () => {
                 <h3>{editingEvent ? 'Editar Evento' : 'Adicionar Novo Evento'}</h3>
               
                 <div>
+                  <label>Título:</label>
+                  <input
+                    type="text"
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
+                    required
+                  />
+                </div>
+                <div>
                   <label>Descrição:</label>
                   <textarea
                     value={descricao}
@@ -152,15 +166,7 @@ const CalendarioEventos = () => {
                     required
                   />
                 </div>
-                  <div>
-                  <label>Título:</label>
-                  <input
-                    type="text"
-                    value={titulo}
-                    onChange={(e) => setTitulo(e.target.value)}
-                    required
-                  />
-                </div>
+                 
                 <div>
                   <label>Horário:</label>
                   <input
@@ -170,9 +176,11 @@ const CalendarioEventos = () => {
                     required
                   />
                 </div>
+                
                 <button type="submit" className="btn-submit">{editingEvent ? 'Atualizar Evento' : 'Adicionar Evento'}</button>
               </form>
-              <button className="close-modal" onClick={() => setIsModalOpen(false)}>Fechar</button>
+              <button className="close-modal" onClick={handleCloseModal}>Fechar</button>
+
             </div>
           </div>
         )}
