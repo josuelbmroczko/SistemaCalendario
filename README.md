@@ -18,12 +18,23 @@ Abra o XAMPP e inicie o servidor MySQL.
 Crie um banco de dados chamado calendario.
 Crie a tabela eventos com os seguintes campos:
 
+## Downlaod do XAMPP
+https://sourceforge.net/projects/xampp/
+
+
+## Criar o banco de dados:
+
+CREATE DATABASE calendario;
+ 
+USE calendario;
+Criar a tabela eventos:
+
 CREATE TABLE eventos (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  titulo VARCHAR(255),
-  descricao TEXT,
-  data DATE,
-  horario TIME
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    data DATE,
+    horario TIME
 );
 ####
 ## Ou baixe o calendario aqui   

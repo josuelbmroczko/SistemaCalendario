@@ -267,8 +267,8 @@ body.escuro .event-card{
 
 /* Cabeçalho do Evento */
 .event-header {
-  display: flex;
-  justify-content: space-between;
+  
+ 
   align-items: center;
   margin-bottom: 10px;
 }
@@ -298,8 +298,7 @@ body.escuro .event-card{
 
 /* Ações do Evento */
 .event-actions {
-  display: flex;
-  justify-content: space-between;
+  
   gap: 10px;
 }
 

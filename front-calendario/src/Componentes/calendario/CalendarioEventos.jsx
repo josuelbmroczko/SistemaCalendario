@@ -98,8 +98,9 @@ const CalendarioEventos = () => {
       return (
         <div key={event.id} className="event-card">
           <div className="event-header">
-            <h3>{event.titulo}</h3>
+            
             <p className="event-date">{formatDate(event.data)}</p>
+            <h3>{event.titulo}</h3>
           </div>
           <p className="event-description">{event.descricao}</p>
           <p className="event-time"><strong>Horário:</strong> {formattedTime}</p>
@@ -133,15 +134,7 @@ const CalendarioEventos = () => {
             <div className="modal-content">
               <form onSubmit={handleSubmit} className="event-form">
                 <h3>{editingEvent ? 'Editar Evento' : 'Adicionar Novo Evento'}</h3>
-                <div>
-                  <label>Título:</label>
-                  <input
-                    type="text"
-                    value={titulo}
-                    onChange={(e) => setTitulo(e.target.value)}
-                    required
-                  />
-                </div>
+              
                 <div>
                   <label>Descrição:</label>
                   <textarea
@@ -156,6 +149,15 @@ const CalendarioEventos = () => {
                     type="date"
                     value={date.toLocaleDateString('en-CA')} // Formato ISO para data local
                     onChange={(e) => setDate(new Date(e.target.value))}
+                    required
+                  />
+                </div>
+                  <div>
+                  <label>Título:</label>
+                  <input
+                    type="text"
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
                     required
                   />
                 </div>
